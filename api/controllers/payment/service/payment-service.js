@@ -1,17 +1,17 @@
 const axios = require('axios');
 const https = require('https'); 
 const pool = require('../../db');
-const tokenUrl = 'https://172.20.16.45/apiGarri/oauth2/token';
-const transferUrl = 'https://172.20.16.45/apiGarri/FundTransfer';
-const enquiryUrl = "https://172.20.16.45/apiGarri/Accountenquiry"
+const tokenUrl = 'https://vertual-ip/apiMicky/oauth2/token';
+const transferUrl = 'https:///vertual-ip/apiMicky/FundTransfer';
+const enquiryUrl = "https:///vertual-ip/apiMicky/Accountenquiry"
 
 
 const transferBody = {
   "Currency":"ETB",
   "Amount":"100",
   "TransactionType":"AC",
-  "DebitAccount":"7260865",
-  "CreditAccount":"20654376"
+  "DebitAccount":"50832578",
+  "CreditAccount":"98245243"
 };
 
 class PaymentService {
@@ -52,7 +52,7 @@ static async makeTransfer(transferHeaders) {
   try {
     const token = await this.getLatestToken();
     const transferHeaders = {
-      'x-api-key': 'GARRI-s89sd7d81-9ow9-6gf6-5gf6-f3w-238',
+      'x-api-key': 'MICKY-s89sd7d81-9ow9-6gf6-5gf6-f3w-238',
       'authorization': token.access_token
     }; 
     const transferResponse = await axios.post(transferUrl, transferBody, { headers: transferHeaders, httpsAgent: new https.Agent({ rejectUnauthorized: false }) });
@@ -68,7 +68,7 @@ static async  getEnquiry(account) {
   try{
     const token = await this.getLatestToken();
     const enquiryHeaders = {
-      'x-api-key': 'GARRI-s89sd7d81-9ow9-6gf6-5gf6-f3w-238',
+      'x-api-key': 'MICKY-s89sd7d81-9ow9-6gf6-5gf6-f3w-238',
       'authorization': token.access_token
     };    
     const enquiryBody = {
