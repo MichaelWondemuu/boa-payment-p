@@ -4,10 +4,10 @@ const { Pool } = require('pg');
 const PaymentService = require('./service/payment-service');
 const pool = new Pool({
     user: 'postgres',
-    host: '35.241.177.190',
+    host: 'localhost',
     database: 'test_db',
     schema:'public',
-    password: 'Gbj!hfhe#rgnfjjA@76534bg',
+    password: 'fgcjh',
     port: 5432,
   });
 class PaymentController {
@@ -62,7 +62,7 @@ class PaymentController {
     }
     static async setBOAtransfer(req, res) {
         // const transferHeaders = {
-        //     'x-api-key': 'GARRI-s89sd7d81-9ow9-6gf6-5gf6-f3w-238',
+        //     'x-api-key': 'MICKY-s89sd7d81-9ow9-6gf6-5gf6-f3w-238',
         //     'authorization': token.access_token
         //   };  //will remove
         const result =await PaymentService.makeTransfer(transferHeaders);
