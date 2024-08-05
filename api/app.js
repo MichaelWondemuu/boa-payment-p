@@ -48,10 +48,10 @@ app.use(cors({ origin: '*' }))
 const { Pool } = require('pg');
 const pool = new Pool({
     user: 'postgres',
-    host: '35.241.177.190',
+    host: 'localhos',
     database: 'test_db',
     schema:'public',
-    password: 'Gbj!hfhe#rgnfjjA@76534bg',
+    password: 'sfsdgfhjs',
     port: 5432,
   });
 /* Controllers
